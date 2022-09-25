@@ -393,7 +393,7 @@ if [ "$GAPPS_BRAND" != 'none' ]; then
     mkdir -p "$WORK_DIR"/gapps || abort
     if [ -f "$GAPPS_PATH" ]; then
         if [ "$GAPPS_BRAND" = "OpenGApps" ]; then
-            if ! unzip -p "$GAPPS_PATH" {Core,GApps}/'*.lz' | tar --lzip -C "$WORK_DIR"/gapps -xf - -i --strip-components=2 --exclude='setupwizardtablet-x86_64' --exclude='packageinstallergoogle-all' --exclude='speech-common' --exclude='markup-lib-arm' --exclude='markup-lib-arm64' --exclude='markup-all' --exclude='setupwizarddefault-x86_64' --exclude='pixellauncher-all' --exclude='pixellauncher-common'; then
+            if ! unzip -p "$GAPPS_PATH" {Core,GApps}/'*.lz' | tar --lzip -C "$WORK_DIR"/gapps -xf - -i --strip-components=2 --exclude='setupwizardtablet-x86_64' --exclude='packageinstallergoogle-all' --exclude='speech-common' --exclude='markup-lib-arm' --exclude='markup-lib-arm64' --exclude='markup-all' --exclude='setupwizarddefault-x86_64' --exclude='pixellauncher-all' --exclude='pixellauncher-common' --exclude='indic-x86_64' --exclude='japanese-x86_64' --exclude='keyboardgoogle-x86_64' --exclude='korean-x86_64' --exclude='pinyin-x86_64' --exclude='zhuyin-x86_64'; then
                 echo "Unzip OpenGApps failed, is the download incomplete?"
                 CLEAN_DOWNLOAD_GAPPS=1
                 abort
